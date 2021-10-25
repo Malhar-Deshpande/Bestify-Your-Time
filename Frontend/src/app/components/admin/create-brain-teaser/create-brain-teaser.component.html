@@ -1,0 +1,45 @@
+<mat-card id="add-question-card">
+    <form [formGroup]="addBrainTeaserForm" (ngSubmit)="submitBrainTeaser()">
+        <h4>Create Quiz</h4>
+                <div id="quiz-title">
+                <mat-form-field class="my-custom-component-small" appearance="outline">
+                    <mat-label>Enter Quiz Name</mat-label>
+                    <input matInput placeholder="Ex. Indian polity" formControlName="quizName">
+                    <mat-error *ngIf="this.addBrainTeaserForm.get('quizName')?.invalid">{{getErrorMessageForQuizName()}}</mat-error>
+                </mat-form-field>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <div formGroupName="questionsSubGroup">
+                <div>
+                    <mat-form-field class="my-custom-component-small" id="question-input-box" appearance="outline"
+                        class="my-custom-component-small">
+                        <mat-label>Enter Question</mat-label>
+                        <input matInput placeholder="Ex. What is capital of India" formControlName="question">
+                        <mat-error *ngIf="this.addBrainTeaserForm.get('questionsSubGroup.question')?.invalid">Question is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+    
+                <div id="choices-input-box">
+                    <mat-form-field class="my-custom-component-small" appearance="outline">
+                        <mat-label>Enter Answer</mat-label>
+                        <input matInput placeholder="Ex. Delhi" formControlName="answer">
+                        <mat-error *ngIf="this.addBrainTeaserForm.get('questionsSubGroup.answer')?.invalid">Please Enter
+                            your Answer</mat-error>
+                    </mat-form-field>
+    
+                </div>
+    
+                <button id="add-button" class="button" type="button" *ngIf="addBrainTeaserForm.get('questionsSubGroup')?.touched && addBrainTeaserForm.valid" mat-raised-button
+                    color="primary" (click)="addQuestion()"
+                    [disabled]="!addBrainTeaserForm.get('questionsSubGroup')?.valid">Add</button>
+                <button id="submit-button" class="button" *ngIf="isAdded" type="submit"
+                    mat-raised-button color="accent" [disabled]="quizName?.invalid">Submit</button>
+    
+    
+                <button style="visibility: hidden;" #clearBtn type="reset">Clear</button>
+            </div>
+    </form>
+    <app-display-brain-teasers [brainTeaserQuestion]="brainTeaserchildObj" *ngIf="isAdded"></app-display-brain-teasers>
+    </mat-card>
+    

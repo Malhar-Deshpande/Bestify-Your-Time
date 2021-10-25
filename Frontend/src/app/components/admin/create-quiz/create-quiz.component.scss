@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+#quiz-title
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+#select-category-form-feild{
+// border: 1px solid black;
+flex: 25%;
+}
+
+#quiz-name-form-feild{
+  // border: 1px solid red;
+flex: 40%;
+}
+
+#quiz-time-form-feild{
+  // border: 1px solid orange;
+  flex: 5%;
+}
+
+#only-for-spacing-reason{
+flex: 15%;
+}
+
+#question-input-box
+{
+    //border: 1px solid black;
+    width: 100%;
+}
+
+#choices-input-box
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#choices-input-box > mat-form-field
+{
+  flex: 15%;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+#choices-input-box > mat-form-field:not(:last-child)
+{
+  margin-right: 0.9rem;
+}
+.mat-form-field-wrapper {
+    height: 2.5rem;
+}
+
+.button
+{
+margin-top: 0.2rem;
+height: 27.6705px;
+width: 82.9688px;
+padding: 2px 19px 2px 19px !important;
+font-weight: normal;
+border-radius: 0.2rem !important;
+}
+
+#submit-button
+{
+    float: right;
+    background-color: #FFCA0C;
+    text-transform: uppercase;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+}
+
+
+#add-button
+{
+//    background-color: #1A237E;
+    background-color: #3F51B5;
+    color: white;
+    text-transform: uppercase;
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+}
+
+:host ::ng-deep {
+    .my-custom-component-small { // add my-custom-component-small class to your mat-form-field element
+      .mat-form-field-flex > .mat-form-field-infix { padding: 0.6em 0 !important;}
+      .mat-form-field-label-wrapper { top: -1.3em; }
+  
+      &.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+        transform: translateY(-1.1em) scale(.7);
+        width: 133.33333%;
+      }
+    }
+  }
+
+#edit-btn
+{
+  background-color: #2DA5A1;
+  border-color: #2DA5A1;
+  line-height: 21px;
+}
+#dialogBoxForEditing
+{
+  position: absolute;
+  top:  50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.btn-sm{
+  padding: .15rem 1.2rem !important;
+}
+
+.add-category-button{
+  border-radius:2rem;
+}
+
+// .mat-form-field-appearance-outline .mat-form-field-subscript-wrapper {
+//   padding: 0 0 !important; 
+// }
+
+:host ::ng-deep {
+  .my-custom-component-small > .mat-form-field-wrapper > .mat-form-field-subscript-wrapper{
+    padding: 0.1rem !important;
+    margin-top: 0.00rem !important;
+  }
+}

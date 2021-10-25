@@ -1,0 +1,81 @@
+.grid{
+    padding-top: 0.75rem;
+    color: white;
+    margin-left: -10rem;
+    float: left;
+}
+
+.right-column{
+    display: flex;
+    direction: row;
+
+  
+    margin-left: 35vw;
+    margin-right: 35vw;
+    width: 30vw;
+
+    background-color: #47565A;
+    border: 1px solid black;
+    height: 10vh;
+    
+    
+
+}
+
+.game-board{
+    background-color:#86B5BD;
+    margin-left: 35vw;
+    margin-right: 35vw;
+    width: 30vw;
+    display: grid;
+    border: 1px solid black;
+    height: 60vh;
+}
+.game-name{
+    justify-content: left;
+    padding: 0.5vh;
+}
+
+.game-details{
+    text-align: right;
+    padding-left: 16vw;
+    padding-top: 0.5vh;
+}
+.play-button{
+    height: 10vh;
+    margin-left: 35vw;
+    margin-right: 35vw;
+    width: 30.2vw;
+    text-align: center;
+    margin-top: 0px;
+    background-color: #47565A;
+    box-shadow: none;
+    padding: none;
+    color: white;
+}
+@media screen and (min-width:300px) and (max-width:728px){
+   .right-column{
+    margin-left: 5vw;
+    margin-right: 5vw;
+    width: 90vw;
+ }
+
+.game-board{
+    margin-left: 5vw;
+     margin-right: 5vw;
+    width:90vw;
+    justify-content: center;
+    
+}
+.game-details{
+   
+    padding-left: 35vw;
+    
+}
+
+.play-button{
+    margin-left: 5vw;
+     margin-right: 5vw;
+    width: 90vw;
+     
+}}

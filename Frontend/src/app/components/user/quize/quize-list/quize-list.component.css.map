@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAA;EACP,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,UAAU;EACtB,MAAM,EAAE,CAAC;EACT,SAAS,EAAE,IAAI;EACf,eAAe,EAAE,aAAa;EAC9B,QAAQ,EAAE,IAAI;EACd,WAAW,EAAE,MAAM;CACtB",
+    "sources": [
+        "quize-list.component.scss"
+    ],
+    "names": [],
+    "file": "quize-list.component.css"
+}

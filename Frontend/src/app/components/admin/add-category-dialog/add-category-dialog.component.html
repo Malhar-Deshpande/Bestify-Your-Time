@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Want To Add New Category ? </h1>
+<div mat-dialog-content>
+  <p>Which Category Do You Want To Add</p>
+  <mat-form-field>
+    <mat-label>Enter Category Name</mat-label>
+    <input matInput [(ngModel)]="data.newCategoryName">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.newCategoryName" cdkFocusInitial>ADD</button>
+</div>

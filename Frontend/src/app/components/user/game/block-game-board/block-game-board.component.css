@@ -1,0 +1,53 @@
+.grid {
+  padding-top: 1rem;
+  color: white;
+}
+
+.right-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  direction: row;
+  margin-left: 30rem;
+  margin-right: 30rem;
+  width: 390px;
+  background-color: #47565A;
+  border: 1px solid black;
+}
+
+.game-board {
+  background-color: #86B5BD;
+  margin-left: 30rem;
+  display: -ms-grid;
+  display: grid;
+  border: 1px solid black;
+}
+
+.game-name {
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  padding: 0.5rem;
+}
+
+.game-details {
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  padding-left: 12rem;
+  padding-top: 0.5rem;
+}
+
+.play-button {
+  height: 60px;
+  margin-left: 30rem;
+  width: 392px;
+  text-align: center;
+  margin-top: 0px;
+  background-color: #47565A;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding: none;
+  color: white;
+}
+/*# sourceMappingURL=block-game-board.component.css.map */

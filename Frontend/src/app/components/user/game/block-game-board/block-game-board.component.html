@@ -1,0 +1,14 @@
+<div class="grid">
+
+    <span class="right-column">
+            <div class="game-name">Block Game</div>
+            <div class="game-details">
+                <div>Score: {{ points }}</div>
+                <div>Best Score : {{ best_score }}</div>
+            </div>
+    </span>
+    <canvas #board class="game-board"></canvas>
+    <div class="block-play-btn">
+        <button (click)="play()" class="play-button ">Play</button>
+    </div>
+</div>

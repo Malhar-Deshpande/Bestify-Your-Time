@@ -1,0 +1,75 @@
+<div class="table-responsive" style="margin-top: 1rem;">
+    <table class="table table-sm"
+        style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Question</th>
+                <th scope="col">Answer</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let q of brainTeaserQuestions | paginate: { itemsPerPage: count, currentPage: p };let i = index">
+                <th scope="row">{{count * (p - 1) + i+1}}</th>
+                <td>{{q.question}}</td>
+                <td>{{q.answer}}</td>
+                <td class="action">
+                    <button  matTooltip="Edit Question" (click)="ForUpdate(q,count * (p - 1) + i)" id="edit-btn">
+                        <mat-icon id="edit-btn-icon">edit</mat-icon>
+                    </button>
+
+                    <button matTooltip="Delete Question" (click)="ForDelete(q,count * (p - 1) + i)" id="delete-btn" style="margin-left: 0.2rem;">
+                        <mat-icon id="delete-btn-icon">delete</mat-icon>
+                    </button>
+
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <div class="text-right">
+        <pagination-controls (pageChange)="p = $event" [autoHide]="autoHidePagination"></pagination-controls>
+    </div>
+</div>
+
+<div id="overlay" *ngIf="toEdit"></div>
+    <div id="dialogBoxForEditing" *ngIf="toEdit"
+        style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+        <form #updateQuestionForm="ngForm" (ngSubmit)="submitUpdatedQuestion(updateQuestionForm.value)" novalidate>
+            <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="width: 28rem;z-index: 1060;">
+
+                <div class="form-row">
+                    <div class="col-12">
+                        <label>Question</label>
+                        <input type="text" required #updatedQuestion="ngModel" class="form-control"
+                            [class.is-invalid]="updatedQuestion.invalid && updatedQuestion.touched"
+                            placeholder="Question" name="question" [ngModel]="showQuestion.question">
+                        <small class="text-danger" [class.d-none]="updatedQuestion.valid">Question is required</small>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="form-row">
+                    <!-- <select class="custom-select col-6" required #updatedanswer="ngModel"
+                        [class.is-invalid]="updatedanswer.invalid && updatedanswer.touched" name="answer"
+                        [ngModel]="showQuestion.answer">
+                        <option *ngFor="let choice of choices" [value]="choice.value">{{choice.viewValue}}</option> 
+                         <small class="text-danger" [class.d-none]="updatedanswer.valid">Correct Choice is required</small>
+                    </select> -->
+                    <label>Answer</label>
+                    <input type="text" required #updatedAnswer="ngModel" class="form-control"
+                            [class.is-invalid]="updatedAnswer.invalid && updatedAnswer.touched"
+                            placeholder="Answer" name="answer" [ngModel]="showQuestion.answer">
+                        <small class="text-danger" [class.d-none]="updatedAnswer.valid">Answer is required</small>
+                </div>
+                <br>
+                <span>
+                    <button class="btn btn-outline-success btn-sm float-right" [disabled]="updateQuestionForm.invalid"
+                        type="submit">UPDATE</button>
+                    <button class="btn btn-outline-warning btn-sm" (click)="closeUpdateQuestionDialog()">CANCEL</button>
+                </span>
+            </div>
+        </form>
+    </div>

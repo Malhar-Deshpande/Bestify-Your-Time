@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAA;EACL,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;CACf;;AACD,AAAA,kBAAkB,CAAA;EAChB,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,GAAG;EACd,WAAW,EAAE,MAAM;CAKpB;;AARD,AAIG,kBAJe,CAIf,GAAG,CAAA;EACC,MAAM,EAAC,IAAI;EACX,UAAU,EAAE,MAAM;CACxB",
+    "sources": [
+        "game-section.component.scss"
+    ],
+    "names": [],
+    "file": "game-section.component.css"
+}

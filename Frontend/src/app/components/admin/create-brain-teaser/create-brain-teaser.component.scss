@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+#add-question-card
+{
+    margin: 1rem;
+}
+
+#quiz-title
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#question-input-box
+{
+    //border: 1px solid black;
+    width: 100%;
+}
+
+#choices-input-box
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#choices-input-box > mat-form-field
+{
+  flex: 15%;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+#choices-input-box > mat-form-field:not(:last-child)
+{
+  margin-right: 0.9rem;
+}
+.mat-form-field-wrapper {
+    height: 2.5rem;
+}
+
+.button
+{
+margin-top: 0.2rem;
+height: 27.6705px;
+width: 82.9688px;
+padding: 2px 19px 2px 19px !important;
+font-weight: normal;
+border-radius: 0.2rem !important;
+}
+
+#submit-button
+{
+    float: right;
+    background-color: #ff661d;
+    text-transform: uppercase;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    line-height: 21px;
+}
+
+
+#add-button
+{
+//    background-color: #1A237E;
+    background-color: #1976D2;
+    color: white;
+    text-transform: uppercase;
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+    padding-bottom: 1.2rem;
+    line-height: 21px;
+
+}
+
+:host ::ng-deep {
+    .my-custom-component-small { // add my-custom-component-small class to your mat-form-field element
+      .mat-form-field-flex > .mat-form-field-infix { padding: 0.6em 0 !important;}
+      .mat-form-field-label-wrapper { top: -1.3em; }
+  
+      &.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+        transform: translateY(-1.1em) scale(.7);
+        width: 133.33333%;
+      }
+    }
+  }
+
+#edit-btn
+{
+  background-color: #00695C;
+  border-color: #00695C;
+  line-height: 15px;
+}
+#dialogBoxForEditing
+{
+  position: absolute;
+  top:  50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.btn-sm{
+  padding: .15rem 1.2rem !important;
+}
+
+mat-error{
+  margin-left: -7px;
+}
+h4{
+  font-size: 1.5rem;
+}

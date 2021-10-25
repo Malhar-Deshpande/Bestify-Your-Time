@@ -1,0 +1,66 @@
+.sign-in-page {
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-image: url(../../../../assets/loginPage.jpg);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  overflow: hidden;
+}
+
+mat-card {
+  float: right;
+  width: 30%;
+  margin: 7% auto;
+  margin-top: 9%;
+  margin-right: 10%;
+  border-radius: 8px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+mat-card-title {
+  color: #303F9F;
+  border-bottom: #303F9F;
+  margin-top: 10px;
+}
+
+mat-form-field {
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+
+mat-card-content {
+  padding-bottom: 5px;
+  margin-top: 20px;
+}
+
+.mat-icon-button {
+  font-size: smaller;
+  margin: -11px;
+}
+
+.sign-in-button {
+  margin-top: 20px;
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+}
+
+span {
+  margin-left: 90px;
+}
+
+a {
+  margin-left: 5px;
+}
+
+mat-error {
+  margin-left: -6px;
+}
+/*# sourceMappingURL=sign-in.component.css.map */

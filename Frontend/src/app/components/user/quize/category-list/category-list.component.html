@@ -1,0 +1,62 @@
+<div>
+    <div class="header">
+        <h1 class="quize-headline">Quize Section</h1>
+    </div>
+    <div class="card-container">
+    <mat-card class="category-container">
+        <div class="card-header">
+          <mat-card-title>General Knowledge</mat-card-title>
+          <mat-card-subtitle>You can solve quiz here</mat-card-subtitle>
+        </div>
+        <mat-card-actions>
+            <mat-form-field class="my-custom-component-small select-category" appearance="outline">
+                    <mat-label style="color: blue;">Select Category</mat-label>
+                    <mat-select>
+                        <mat-option (click)="goTosubcategory(sub_category.sub_cat_id)" *ngFor="let sub_category of GkCategories"
+                            [value]="sub_category.sub_cat_id">
+                            {{sub_category.sub_cat_name}}
+                        </mat-option>
+                    </mat-select>
+            </mat-form-field>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card class="category-container">
+        <div class="card-header">
+          <mat-card-title>Brain Teaser</mat-card-title>
+          <mat-card-subtitle>You can solve quiz here</mat-card-subtitle>
+       </div>
+        <mat-card-actions>
+            <mat-form-field class="my-custom-component-small select-category" appearance="outline">
+                    <mat-label style="color: blue;">Select Category</mat-label>
+                    <mat-select>
+                        <mat-option (click)="goToQuize(sub_category.sub_cat_id)" *ngFor="let sub_category of BrainTeaserArray"
+                            [value]="sub_category.sub_cat_id">
+                            {{sub_category.sub_cat_name}}
+                        </mat-option>
+                    </mat-select>
+            </mat-form-field>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card class="category-container">
+        <div class="card-header">
+          <mat-card-title>Logical Thinking</mat-card-title>
+          <mat-card-subtitle>You can solve quiz here</mat-card-subtitle>
+        </div>
+        <mat-card-actions>
+            <mat-form-field class="my-custom-component-small select-category" appearance="outline">
+                    <mat-label>Select Category</mat-label>
+                    <mat-select>
+                        <mat-option (click)="goTosubcategory(sub_category.sub_cat_id)" *ngFor="let sub_category of logicalThinkingArray"
+                            [value]="sub_category.sub_cat_id">
+                            {{sub_category.sub_cat_name}}
+                        </mat-option>
+                    </mat-select>
+            </mat-form-field>
+        </mat-card-actions>
+    </mat-card>
+
+</div>
+
+
+
+</div>

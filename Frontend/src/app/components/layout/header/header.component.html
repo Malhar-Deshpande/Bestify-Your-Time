@@ -1,0 +1,26 @@
+<div class="nav-bar">
+    <mat-toolbar class="mat-elevation-z4" color="primary">
+        <span class="img-span">
+            <!-- <mat-icon>timer</mat-icon>BestifyYourTime -->
+            <img src="../../../../assets/logo.jpg" class="logo" />
+        </span>
+        <span><p class="app-name">BestifyYourTime</p>
+        </span>
+        <div class="spacer"></div>
+
+        <a mat-button routerLink="admin/dashboard"*ngIf="role=='admin'">Home</a>
+        <a mat-button routerLink="user/dashboard" *ngIf="role=='user'">Home</a>
+        <!-- <a mat-button routerLink="user/dashboard" *ngIf="role=='user'">Logical Thinking</a>
+        <a mat-button routerLink="user/dashboard" *ngIf="role==='user'">Quiz</a> -->
+        <!-- <a mat-button routerLink="user/dashboard" *ngIf="role==='user'">Register</a> -->
+        <a mat-button routerLink="user/game" *ngIf="role=='user'">Play Games</a>
+        <a mat-button routerLink="user/favouritesQuiz" *ngIf="role=='user'">Favourites</a>
+        <!-- <a mat-raised-button>Logout</a> -->
+        <div class="display_name">
+        <b>{{name}}</b>
+        </div>
+        <button mat-icon-button class="example-icon logout-icon"  matTooltip="Logout" (click)="onLogout()" aria-label="Example icon-button with logout icon">
+            <mat-icon>logout</mat-icon>
+        </button>
+    </mat-toolbar>
+</div>

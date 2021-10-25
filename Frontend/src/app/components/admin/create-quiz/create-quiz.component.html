@@ -1,0 +1,104 @@
+
+<mat-card id="add-question-card">
+    <!-- <button mat-mini-fab  class="add-category-button" (click)="openDialog()">
+        <mat-icon>add</mat-icon> 
+        </button> -->
+<form [formGroup]="addQuizForm" (ngSubmit)="submitQuiz()">
+    <h4>Create Quiz</h4>
+        <div id="quiz-title">
+            <mat-form-field class="my-custom-component-small" appearance="outline" id="select-category-form-feild">
+                <mat-label>Select Category</mat-label>
+                <mat-select formControlName="quizCategory">
+                    <mat-option (click)="SelectValue(category.sub_cat_id)" *ngFor="let category of storeSubCategories"
+                        [value]="category.sub_cat_id">
+                        {{category.sub_cat_name}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="this.addQuizForm.get('quizCategory')?.invalid">Please select a Category</mat-error>
+            </mat-form-field>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <mat-form-field class="my-custom-component-small" appearance="outline" id="quiz-time-form-feild">
+                <mat-label>
+                    Quiz Time
+                </mat-label>
+                <input matInput type="number" formControlName="quizTime" min="0"> 
+                <mat-error *ngIf="this.addQuizForm.get('quizTime')?.invalid">{{getErrorMessageForTime()}}</mat-error>
+                <mat-hint align="end">Time in Minutes</mat-hint>
+            </mat-form-field>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <mat-form-field class="my-custom-component-small" appearance="outline" id="quiz-name-form-feild">
+                <mat-label>Enter Quiz Name</mat-label>
+                <input matInput placeholder="Ex. Indian polity" formControlName="quizName">
+                <mat-error *ngIf="this.addQuizForm.get('quizName')?.invalid">{{getErrorMessageForQuizName()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div formGroupName="questionsSubGroup">
+
+            <div>
+                <mat-form-field class="my-custom-component-small" id="question-input-box" appearance="outline"
+                    class="my-custom-component-small">
+                    <mat-label>Enter Question</mat-label>
+                    <input matInput placeholder="Ex. What is capital of India" formControlName="question">
+                    <mat-error *ngIf="this.addQuizForm.get('questionsSubGroup.question')?.invalid">{{getErrorMessageForQuizQuestion()}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div id="choices-input-box">
+                <mat-form-field class="my-custom-component-small" appearance="outline">
+                    <mat-label>Option 1</mat-label>
+                    <input matInput placeholder="Mumbai" formControlName="choice1">
+                    <mat-error *ngIf="this.addQuizForm.get('questionsSubGroup.choice1')?.invalid">Choice 1 is required
+                    </mat-error>
+                </mat-form-field>
+
+
+                <mat-form-field class="my-custom-component-small" appearance="outline">
+                    <mat-label>Option 2</mat-label>
+                    <input matInput placeholder="California" formControlName="choice2">
+                    <mat-error *ngIf="this.addQuizForm.get('questionsSubGroup.choice2')?.invalid">Choice 2 is required
+                    </mat-error>
+                </mat-form-field>
+
+
+                <mat-form-field class="my-custom-component-small" appearance="outline">
+                    <mat-label>Option 3</mat-label>
+                    <input matInput placeholder="New Delhi" formControlName="choice3">
+                    <mat-error *ngIf="this.addQuizForm.get('questionsSubGroup.choice3')?.invalid">Choice 3 is required
+                    </mat-error>
+                </mat-form-field>
+
+
+                <mat-form-field class="my-custom-component-small" appearance="outline">
+                    <mat-label>Option 4</mat-label>
+                    <input matInput placeholder="Kanpur" formControlName="choice4">
+                    <mat-error *ngIf="this.addQuizForm.get('questionsSubGroup.choice4')?.invalid">Choice 4 is required
+                    </mat-error>
+                </mat-form-field>
+
+
+                <mat-form-field class="my-custom-component-small" appearance="outline">
+                    <mat-label>Choose Correct Option</mat-label>
+                    <mat-select formControlName="answer">
+                        <mat-option *ngFor="let choice of choices" [value]="choice.value">
+                            {{choice.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="this.addQuizForm.get('questionsSubGroup.answer')?.invalid">Please Select
+                        Choice</mat-error>
+                </mat-form-field>
+
+            </div>
+
+            <button id="add-button" class="button" type="button" *ngIf="addQuizForm.get('questionsSubGroup')?.touched && addQuizForm.valid" mat-raised-button
+                color="primary" (click)="addQuestion()"
+                [disabled]="!addQuizForm.get('questionsSubGroup')?.valid">Add</button>
+            <button id="submit-button" class="button" *ngIf="AdminService.isAdded" type="submit"
+                mat-raised-button color="accent" [disabled]="quizCategory?.invalid && quizName?.invalid && quizTime?.invalid">Submit</button>
+
+
+            <button style="visibility: hidden;" #clearBtn type="reset">Clear</button>
+        </div>
+</form>
+<app-display-data *ngIf="AdminService.isAdded"></app-display-data>
+</mat-card>

@@ -1,0 +1,36 @@
+<mat-card class="quiz-container">
+  <mat-card-header [ngClass]="isSubmit">
+      <mat-card-title id="title" class="title">{{quizTitle}}</mat-card-title>
+            <span class="point">{{isSubmitted ? 'Points : ' : ''}}</span>&nbsp;&nbsp;&nbsp;<span class="score">{{isSubmitted ? score:''}}</span>
+            <h3 id="time"  [hidden]="timeHide" >Time Remain : <countdown  #time [config]='{leftTime:quiz_time , format:"m:s" }'></countdown></h3> 
+  </mat-card-header>
+  <mat-card class="question-container" *ngFor="let question of quize,let index=index">
+    <mat-icon class="clear-icon" *ngIf="isWrongAns(question)">clear</mat-icon>
+        <h2>{{index+1}}&nbsp;{{question.question}}</h2>
+          <mat-card-actions>
+              <mat-radio-group 
+                    [disabled]="isSubmitted"
+                    aria-labelledby="example-radio-group-label"
+                    #radio 
+                    >
+                <mat-radio-button value="a" class="radio-button" [checked]="isChecked(index,'a')" (click)="checkAns(question,'a')">{{question.choice1}}</mat-radio-button>
+                <mat-icon class="done-icon" *ngIf="isCorrectAns(question,'a')">done</mat-icon>
+                <br><br>
+                <mat-radio-button value="b" class="radio-button" [checked]="isChecked(index,'b')"  (click)="checkAns(question,'b')">{{question.choice2}}</mat-radio-button>
+                <mat-icon class="done-icon" *ngIf="isCorrectAns(question,'b')">done</mat-icon>
+                <br><br>
+                <mat-radio-button value="c" class="radio-button" [checked]="isChecked(index,'c')" (click)="checkAns(question,'c')">{{question.choice3}}</mat-radio-button>
+                <mat-icon class="done-icon" *ngIf="isCorrectAns(question,'c')">done</mat-icon>
+                <br><br>
+                <mat-radio-button value="d" class="radio-button" [checked]="isChecked(index,'d')" (click)="checkAns(question,'d')">{{question.choice4}}</mat-radio-button>
+                <mat-icon class="done-icon" *ngIf="isCorrectAns(question,'d')">done</mat-icon>
+                </mat-radio-group>
+              </mat-card-actions>
+</mat-card>
+  <mat-card-actions>
+      <button mat-button *ngIf="!isSubmitted" (click)="onSave(time.left)" (click)="time.pause()">Save</button>
+      <button *ngIf="!isSubmitted" mat-button (click)="onSubmit()" (click)="time.pause()">Submit</button>
+      <button *ngIf="isSubmitted" mat-button (click)="goToHome()">Back</button>
+  </mat-card-actions>
+</mat-card>
+

@@ -1,0 +1,17 @@
+<div class="quiz-container">
+  <mat-grid-list cols="2">
+  <mat-card class="quize-card" *ngFor="let quiz of quizes">
+      <mat-card-header>
+          <h2>{{quiz.quiz_name}}</h2>
+      </mat-card-header>
+     
+      <mat-card-actions>
+        
+        <img class="icon"  src="../../../../../assets/icons8-hearts-24.png" (click)="addTofavourite(quiz)"/>
+        
+        <button color="primary" (click)="displayQuize(quiz)" mat-raised-button>Take Test</button>
+        </mat-card-actions>
+    </mat-card>
+  </mat-grid-list>
+</div>
+

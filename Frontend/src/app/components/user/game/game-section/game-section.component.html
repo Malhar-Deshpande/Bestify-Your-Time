@@ -1,0 +1,34 @@
+<div class="game-div">
+<div *ngIf="pageNo===0"class="game-page-content">
+   
+    <div class="first">
+    <mat-card class="gameCard">
+    <mat-card-header>
+        <mat-card-title>Block Game</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src=".\assets\block-game.png">
+    <mat-card-content>
+        <button (click)='changePageNo(1)'>Play</button>
+    </mat-card-content>
+
+</mat-card>
+    </div>
+<div class="second">
+<mat-card class="gameCard">
+    <mat-card-header>
+        <mat-card-title>Snake Game</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src=".\assets\snake-game.png">
+    <mat-card-content>
+        <button (click)='changePageNo(2)'>Play</button>
+    </mat-card-content>
+</mat-card>
+</div>
+</div>
+<div *ngIf="pageNo===1">
+    <app-board></app-board>
+</div>
+<div *ngIf="pageNo===2">
+    <app-snake-game></app-snake-game>
+</div>
+<div>

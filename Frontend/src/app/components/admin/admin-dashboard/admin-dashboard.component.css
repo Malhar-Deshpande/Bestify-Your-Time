@@ -1,0 +1,31 @@
+.card-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+mat-card {
+  margin: 1rem;
+  -webkit-box-flex: 20%;
+      -ms-flex: 20%;
+          flex: 20%;
+  background-color: #008c8c;
+  color: white;
+}
+
+mat-card-header > .mat-card-header-text {
+  margin-left: 0px;
+}
+
+.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+  background-color: #05ce91;
+}
+
+.mat-card-subtitle {
+  color: white;
+}
+/*# sourceMappingURL=admin-dashboard.component.css.map */

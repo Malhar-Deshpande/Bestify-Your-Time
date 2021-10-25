@@ -1,0 +1,75 @@
+<div class="sign-up-page">
+    <mat-card class="mat-elevation-z4">
+        <mat-card-title style="text-align: center;">Sign Up</mat-card-title>
+            <mat-card-content>
+                <form [formGroup]="signUpForm">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input type="text" matInput formControlName="name" placeholder="Name" />
+                        <mat-icon matSuffix>person_outline</mat-icon>
+                        <mat-error>
+                            Name is Required!
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input type="text" matInput formControlName="username" placeholder="Username" />
+                        <mat-icon matSuffix>person</mat-icon>
+                        <mat-error>
+                            User Name is Required!
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput formControlName="email" placeholder="Ex. abc@gmail.com" />
+                        <mat-icon matSuffix>email</mat-icon>
+                        <mat-error *ngIf="signUpForm.get('email')?.hasError('pattern') 
+                        && !signUpForm.get('email')?.hasError('required')">
+                            Enter the Valid Email Address
+                        </mat-error>
+                        <mat-error *ngIf="signUpForm.get('email')?.hasError('required')">
+                            Email is Required!
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput formControlName="password" [type]="hide ? 'password':'text'">
+                        <button mat-icon-button matSuffix (click)="hide=!hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off':'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="signUpForm.get('password')?.hasError('required')">
+                            Password is Required!
+                        </mat-error>
+                        <mat-error *ngIf="signUpForm.get('password')?.hasError('pattern') 
+                        && !signUpForm.get('password')?.hasError('required')">
+                            Enter the Valid Password <b>For Ex: Xyz@123</b>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Confirm Password</mat-label>
+                        <input matInput formControlName="confirm_password" [type]="hide ? 'password':'text'">
+                        <button mat-icon-button matSuffix (click)="hide=!hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off':'visibility'}}</mat-icon>
+                        </button>
+                        <!-- <mat-error *ngIf="signUpForm.get('confirm_password')?.hasError('required')">
+                            Password is Required!
+                        </mat-error> -->
+                        <mat-error *ngIf="signUpForm.controls.confirm_password.errors">
+                           Password does not match!
+                        </mat-error>
+                        <!-- <mat-error *ngIf="signUpForm.get('confirm_password')?.hasError('required')">
+                            This Field is Required!
+                        </mat-error> -->
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" class="sign-up-button" type="submit" (click)="onSignUp()" [disabled]="!signUpForm.valid">SIGN UP</button>
+                    <span>Already have an Account ?<a routerLink="">Sign In</a></span>
+                    
+                <button style="visibility: hidden;" #clearBtn type="reset">Clear</button>
+
+                </form>
+            </mat-card-content>
+    </mat-card>
+    
+</div>
+
+

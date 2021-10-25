@@ -1,0 +1,77 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: fixed;
+}
+.spacer{
+    flex: 1 1 auto;
+}
+// .content{
+//     padding: 16px;
+// }
+.content > mat-card{
+    width: 200px;
+}
+/* footer{
+    position:sticky;
+} */
+a{
+    margin: 1rem;
+}
+// .nav-bar{
+
+// }
+.logo{
+    margin-top: 8px;
+    margin-right: 20px;
+    display: block;
+    // margin-top: 2px;
+    height: 43px;
+    width: 100px;
+    // align-items: center;
+}
+.app-name{
+    margin-left:-65px;
+    margin-top: 19px;
+    display:  block;
+    text-align: center;
+    // margin-bottom: 55px;
+}
+mat-toolbar {
+    height: 50px;
+}
+
+span{
+    margin-left:3rem;
+}
+.display_name{
+    margin: 1rem;
+    border: rgb(16, 20, 16);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    background-color: darkblue;
+}
+
+@media screen and (min-width:300px) and (max-width:768px) {
+    html{
+        margin: 0;
+        width: 100%;
+
+    }
+    .nav-bar {
+        height: 50px;
+        width: 100%;
+        right: 0;
+    }
+
+    .logo{
+       margin-left: -62px;
+        // align-items: center;
+    }
+    
+}

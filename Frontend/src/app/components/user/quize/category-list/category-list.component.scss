@@ -1,0 +1,93 @@
+.header{
+    display: flex;
+    margin-top: 1.5rem;
+    margin-left: 3.8rem;
+    .quiz-headline{
+        font-size: 700;
+        line-height: 2.5;
+        margin-left: 60rem;
+        
+    }
+}
+    
+
+.card-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        //margin-left: 2.5rem;
+        padding-left: 5.1rem;
+.category-container{
+            display:flex;
+            flex-direction: column;
+            margin-left: 3rem;
+            align-items:flex-start;
+            width: 17rem;
+            height: 8.5rem;
+            ///margin-top: 100px;
+            //margin-bottom: 100px;
+            background-color: #e1f5fe;
+            text-align: left;
+           // justify-content: space-between;
+.card-header{
+               padding-left: 0.5rem;
+               padding-top: 1rem;
+           }
+
+        }
+    }
+.select-category{
+        position: absolute;
+        bottom:0;
+        right:0;
+        margin-right: 0.5rem;
+        padding-bottom: 0px;
+        width:10rem;
+
+    }
+
+    :host ::ng-deep {
+        .my-custom-component-small { // add my-custom-component-small class to your mat-form-field element
+          .mat-form-field-flex > .mat-form-field-infix { padding: 0.6em 0 !important;}
+          .mat-form-field-label-wrapper { top: -1.3em; }
+      
+          &.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+            transform: translateY(-1.1em) scale(.7);
+            width: 80.33333%;
+          }
+        }
+      }
+
+      ::ng-deep {
+        .mat-form-field-appearance-outline .mat-form-field-outline {
+           color:blue;
+        }
+        mat-form-field {
+           .mat-hint, input, ::placeholder, .mat-form-field-label {
+              color: blue;
+           }
+        }
+     }
+    
+
+@media only screen and (max-width:700px) {
+    .card-container{
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        align-items: center;
+        justify-content: center;
+    
+    .category-container{
+        margin: 10px auto;
+        padding: 10px;
+        width: 13rem;
+        height: 13rem;
+    }
+    }
+
+
+    
+}

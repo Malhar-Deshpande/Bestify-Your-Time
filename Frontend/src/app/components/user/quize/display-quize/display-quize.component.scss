@@ -1,0 +1,125 @@
+.question-container{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+    margin: 1.5rem;
+    width: auto;
+    height:anto;
+    background-color: whitesmoke;
+    box-shadow:rgba(60,64,67,0.3) 0px 1px 2px 0px(60,64,67,0.15)0px 1px 3px 1px !important;
+}
+
+.quiz-container{
+    margin: 0.5rem 10rem 1rem 10rem;
+}
+
+span{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    margin-block-end: 14rem;
+}
+
+@media only screen and (max-width:700px) {
+    .question-container{
+        width: 100%;
+        height:fit-content;
+        font-weight: 15px;
+        font-size: 17px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-height: 100%;
+        justify-content: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0px;
+        padding: 0px;
+        gap:10px;
+    }
+    .quiz-container{
+        margin: 0px;
+        gap:10px;
+        height: auto;
+        width: 10rem;
+        display:contents;
+
+    }
+    h2{
+        position: relative;
+        z-index: 1;
+        color: #0e141e;
+        font-weight: 7px;
+        font-size: 10px;
+        text-align: left;
+        display: inline;
+    }
+}
+
+.done-icon {
+    color: #44a76f !important;
+}
+
+.clear-icon {
+    color: #ee2a2a !important;
+}
+
+.radio-button{
+    padding-left: 0.5rem;
+}
+
+.score{
+    position: absolute; top: 1rem; right: 1rem ;
+    text-align: left;
+}
+
+.point{
+    position: absolute; top: 1rem; right: 1rem;
+    padding-left: 45rem;
+}
+
+h2{
+    position: relative;
+    z-index: 1;
+    color: #0e141e;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+#time{
+    color: red;
+    padding-left: 35rem;
+}
+
+.title{
+    position: relative;
+    z-index: 1;
+    color: #0e141e;
+    font-weight: 700;
+    font-size: 20px;
+    padding-left: 1rem;
+    
+}
+::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+ 	//opacity: 0.5 !important;     /*click effect color change*/
+	background-color: blue !important;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+	background-color: blue!important;   /*inner circle color change*/
+}
+
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+	border-color:blue!important; /*outer ring color change*/
+}
+
+
+.header{
+    background-color: blue;
+}
+
+button{
+   color: blue;
+}
